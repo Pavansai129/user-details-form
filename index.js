@@ -169,14 +169,12 @@ dobInput.addEventListener("change", (event) =>
 
 function handleCheckbox(checkbox) {
   // Get the checkbox element by its id
-
   const resultMessage = document.getElementById("agreeTermsAndConditions");
-  checkTermsAndConditions = checkbox;
-  checkTermsAndConditions = checkbox;
   resultMessage.textContent = checkbox
     ? "Terms and conditions accepted!"
     : "Please accept the terms and conditions.";
   if (checkbox) {
+    checkTermsAndConditions = checkbox;
     resultMessage.classList.add("valid");
     resultMessage.classList.remove("invalid");
   } else {
@@ -225,11 +223,13 @@ function displayUserDetails(event) {
   const userDetails = `
         <strong>Username:</strong> ${username}<br>
         <strong>Email:</strong> ${email}<br>
-        <strong>Email:</strong> ${password}<br>
+        <strong>Password:</strong> ${password}<br>
         <strong>Date of Birth:</strong> ${dob}<br>
         <strong>Gender:</strong> ${gender}<br>
         <strong>Country:</strong> ${country}<br>
-        <strong>Terms and Conditions Accepted:</strong> ${terms ? "Yes" : "No"}
+        <strong>Terms and Conditions Accepted:</strong> ${
+          checkTermsAndConditions ? "Yes" : "No"
+        }
     `;
 
   // Display the user details in the container
