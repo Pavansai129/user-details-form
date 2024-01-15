@@ -16,9 +16,6 @@ function validateInput(input) {
 }
 
 function checkInput(userInput) {
-  // Get the input value from the HTML element with id="userInput"
-  //   const userInput = document.getElementById("username").value;
-
   // Validate the input
   const isValid = validateInput(userInput);
 
@@ -50,10 +47,6 @@ function validateEmail(email) {
 }
 
 function checkEmail(emailInput) {
-  // Get the email value from the HTML element with id="emailInput"
-  //   const emailInput = document.getElementById("email").value;
-  //   console.log("email");
-
   // Validate the email
   const isValid = validateEmail(emailInput);
   checkEmailInput = isValid;
@@ -84,9 +77,6 @@ function validatePassword(password) {
 }
 
 function checkPassword(passwordInput) {
-  // Get the password value from the HTML element with id="passwordInput"
-  // const passwordInput = document.getElementById('password').value;
-
   // Validate the password
   const isValid = validatePassword(passwordInput);
   checkPasswordInput = isValid;
@@ -191,9 +181,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Get all radio buttons with the name "gender"
   const radioButtons = document.querySelectorAll('input[name="gender"]');
 
-  // Variable to store the selected value
-  //   let selectedValue;
-
   // Add event listener to each radio button
   radioButtons.forEach(function (radioButton) {
     radioButton.addEventListener("change", function () {
@@ -205,8 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-// country = document.getElementById("country").value;
 
 function displayUserDetails(event) {
   event.preventDefault();
@@ -221,15 +206,15 @@ function displayUserDetails(event) {
 
   // Create a string with the user details
   const userDetails = `
-        <strong>Username:</strong> ${username}<br>
-        <strong>Email:</strong> ${email}<br>
-        <strong>Password:</strong> ${password}<br>
-        <strong>Date of Birth:</strong> ${dob}<br>
-        <strong>Gender:</strong> ${gender}<br>
-        <strong>Country:</strong> ${country}<br>
-        <strong>Terms and Conditions Accepted:</strong> ${
+        <p class="user-detail">Username: ${username}</p>
+        <p class="user-detail">Email: ${email}</p>
+        <p class="user-detail">Password: ${password}</p>
+        <p class="user-detail">Date of Birth: ${dob}</p>
+        <p class="user-detail">Gender: ${gender}</p>
+        <p class="user-detail">Country: ${country}</p>
+        <p class="user-detail">Terms and Conditions Accepted: ${
           checkTermsAndConditions ? "Yes" : "No"
-        }
+        }</p>
     `;
 
   // Display the user details in the container
@@ -242,7 +227,9 @@ function displayUserDetails(event) {
   let g = country !== undefined;
   let h = checkTermsAndConditions;
   if (a && b && c && d && e && f && g && h) {
-    document.getElementById("userDetails").innerHTML = userDetails;
+    let userDetailsContainerEl = document.getElementById("userDetails");
+    userDetailsContainerEl.innerHTML = userDetails;
+    userDetailsContainerEl.classList.add("user-details");
   }
 }
 
