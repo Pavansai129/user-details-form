@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1 class="heading">User Details Form</h1>
+      <form class="form" id="userDetailsForm">
+        <div class="label-and-input-container">
+          <label for="username" class="label">Username</label>
+          <input
+            type="text"
+            placeholder="Enter Your Name"
+            id="username"
+            class="input"
+            required
+          />
+          <p class="error-msg" id="usernameError"></p>
+        </div>
+        <div class="label-and-input-container">
+          <label for="email" class="label">Email</label>
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            id="email"
+            class="input"
+            required
+          />
+          <p class="error-msg" id="userEmailError"></p>
+        </div>
+        <div class="label-and-input-container">
+          <label for="password" class="label">Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            id="password"
+            class="input"
+            required
+          />
+          <p class="error-msg" id="passwordError"></p>
+        </div>
+        <div class="label-and-input-container">
+          <label for="confirmPassword" class="label">Confirm Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            id="confirmPassword"
+            class="input"
+            required
+          />
+          <p class="error-msg" id="confirmPasswordError"></p>
+        </div>
+        <div class="label-and-input-container">
+          <label for="datOfBirth" class="label">Date of birth</label>
+          <input type="date" id="datOfBirth" class="input" required />
+          <p class="error-msg" id="dateOfBirthError"></p>
+        </div>
+        <div class="label-and-input-container">
+          <h3 class="heading-label">Gender</h3>
+          <div class="gender-input-container" id="genderInputContainer">
+            <div>
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="Male"
+                checked
+              />
+              <label for="male">Male</label>
+            </div>
+            <div>
+              <input type="radio" id="female" name="gender" value="Female" />
+              <label for="female">Female</label>
+            </div>
+            <div>
+              <input type="radio" id="other" name="gender" value="Other" />
+              <label for="other">Other</label>
+            </div>
+          </div>
+        </div>
+        <div class="label-and-input-container">
+          <h3 class="heading-lable">Country</h3>
+          <select class="drop-down" id="country">
+            <option value="India">India</option>
+            <option value="U.S.America">U.S.America</option>
+            <option value="England">England</option>
+            <option value="Germany">Germany</option>
+          </select>
+        </div>
+        <div class="label-and-input-container">
+          <div class="terms-and-conditions-container">
+            <input type="checkbox" class="input" id="checkbox" />
+            <p class="terms-and-conditions-text">
+              I Agree for the<span>Terms and Conditions</span>
+            </p>
+          </div>
+          <p class="error-msg" id="agreeTermsAndConditions"></p>
+        </div>
+      </form>
+      <button
+        type="submit"
+        form="userDetailsForm"
+        id="submit"
+        class="submit-button"
+      >
+        Submit
+      </button>
+
+      <div class="user-details" id="userDetails"></div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
